@@ -22,6 +22,18 @@ injectGlobal`
     background-color: ${theme.colors.greyDarker};
     color: ${theme.colors.white};
   }
+
+  a {
+    color: ${theme.colors.primary};
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      /* text-decoration: underline; */
+      border-bottom: 1px solid white;
+    }
+  }
 `;
 
 export default theme;

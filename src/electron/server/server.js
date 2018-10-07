@@ -1,7 +1,8 @@
 import configureStore from './config/store';
+import initialState from './config/initialState';
 
 function start() {
-  configureStore(state => state, { hello: 'world' });
+  configureStore(state => state, initialState);
 }
 
 export default start;

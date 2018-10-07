@@ -12,7 +12,8 @@ class CIJenkins extends CIInterface {
   }
 
   getInfo(cb) {
-    this.ci.info(function(err, data) {
+    this.ci.job.get('ZinderLabs/ZAP - Staging - Build + Deploy', function(err, data) {
+      // this.ci.info(function(err, data) {
       if (err) throw err;
 
       console.log('info', data);
