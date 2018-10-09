@@ -1,6 +1,22 @@
 import styled from 'styled-components';
 
 export default styled.div`
+  background: ${props => props.theme.colors.greyDarker};
+  width: 150px;
+  height: 150px;
+  border-top: solid 5px ${props => props.theme.colors.primary};
+  border-left: solid 5px ${props => props.theme.colors.primary};
+  border-bottom: solid 0px ${props => props.theme.colors.primary};
+  border-radius: 200px;
+  box-shadow: 0 0 50px ${props => props.theme.colors.primary};
+
+  img {
+    margin-top: 20%;
+    height: 60%;
+  }
+`;
+
+/*export default styled.div`
   position: relative;
   margin: 64px 30px;
   width: 80px;
@@ -40,13 +56,10 @@ export default styled.div`
     width: 140px;
     height: 140px;
     border-radius: 100%;
-    /* border: 1px solid rgba(255, 255, 255, 0.05); */
-    /* box-shadow: inset 0 0 64px rgba(255, 255, 255, 0.05); */
-    /* box-shadow: 0px 0px 64px 24px rgba(59, 97, 100, 0.75); */
     border: 2px solid rgba(219, 174, 71, 0.85);
     box-shadow: inset 0 0 64px 16px rgba(219, 174, 71, 0.25),
       0px 0px 64px 24px rgba(219, 174, 71, 0.75);
     top: -31px;
     left: -31px;
   }
-`;
+`;*/

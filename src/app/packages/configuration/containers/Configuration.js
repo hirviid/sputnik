@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { requestInfo } from '../../../../shared/actions';
 import Flex from '../../../components/Flex';
 import Card from '../components/Card';
@@ -19,18 +20,22 @@ class Configuration extends React.Component {
 
     return (
       <Card>
-        <Flex flex={2}>
+        <Flex flex={4}>
           <Logo>
             {/* <span>{configuration.ciType}</span> */}
             <img src={`/images/${configuration.ciType}.svg`} alt="logo" />
           </Logo>
         </Flex>
-        <Flex flex={1}>
+        <Flex flex={2}>
           {configuration.configuration.username}
           &nbsp;@&nbsp;
           <a href="{configuration.configuration.url}" target="_blank">
             {configuration.configuration.url}
           </a>
+          <br />
+        </Flex>
+        <Flex flex={1}>
+          <Link to={`/list/${configuration.id}`}>Inspect -></Link>
         </Flex>
       </Card>
     );

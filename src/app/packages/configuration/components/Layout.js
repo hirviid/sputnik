@@ -6,4 +6,8 @@ export default styled.section`
   justify-content: center;
   height: 100%;
   flex-direction: column;
+
+  & > div {
+    z-index: 2;
+  }
 `;

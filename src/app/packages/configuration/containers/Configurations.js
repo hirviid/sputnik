@@ -4,10 +4,12 @@ import map from 'lodash/map';
 import Flex from '../../../components/Flex';
 import Layout from '../components/Layout';
 import AppTitle from '../components/AppTitle';
+import Galaxy from '../components/Galaxy';
 import Configuration from './Configuration';
 
 const Configurations = ({ configurations }) => (
   <Layout>
+    <Galaxy />
     <Flex flex={1}>
       <AppTitle>Sputnik</AppTitle>
     </Flex>
