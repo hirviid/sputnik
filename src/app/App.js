@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import rootReducer from '../shared/rootReducer';
 import configureStore from './config/store';
 import theme from './config/theme';
 import configuration from './packages/configuration';
@@ -9,7 +10,7 @@ import monitor from './packages/monitor';
 
 const App = () => (
   <ThemeProvider theme={theme}>
-    <Provider store={configureStore(state => state)}>
+    <Provider store={configureStore(rootReducer)}>
       <Router>
         <React.Fragment>
           <Route path="/" exact component={configuration.Configurations} />

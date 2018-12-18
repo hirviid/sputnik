@@ -4,9 +4,9 @@ export default styled.div`
   background: ${props => props.theme.colors.greyDarker};
   width: 150px;
   height: 150px;
-  border-top: solid 5px ${props => props.theme.colors.primary};
-  border-left: solid 5px ${props => props.theme.colors.primary};
-  border-bottom: solid 0px ${props => props.theme.colors.primary};
+  border-top: solid 0px ${props => props.theme.colors.primary};
+  border-right: solid 5px ${props => props.theme.colors.primary};
+  border-bottom: solid 5px ${props => props.theme.colors.primary};
   border-radius: 200px;
   box-shadow: 0 0 50px ${props => props.theme.colors.primary};
 

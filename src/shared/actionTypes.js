@@ -1,2 +1,4 @@
 export const INFO_REQUESTED = 'INFO_REQUESTED';
 export const INFO_FULFILLED = 'INFO_FULFILLED';
+export const JOB_REQUESTED = 'JOB_REQUESTED';
+export const JOB_FULFILLED = 'JOB_FULFILLED';

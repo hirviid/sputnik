@@ -5,6 +5,30 @@ const { TouchBarButton, TouchBarLabel, TouchBarSpacer } = TouchBar;
 const path = require('path');
 const isDev = require('electron-is-dev');
 
+// const oJSONStringify = JSON.stringify;
+// let cache = [];
+// const myCensor = function(key, value) {
+//   if (typeof value === 'object' && value !== null) {
+//     if (cache.indexOf(value) !== -1) {
+//       // Duplicate reference found
+//       // try {
+//       // If this value does not reference a parent it can be deduped
+//       // return JSON.parse(JSON.stringify(value));
+//       // } catch (error) {
+//       // discard key if value cannot be deduped
+//       return;
+//       // }
+//     }
+//     // Store value in our collection
+//     cache.push(value);
+//   }
+//   return value;
+// };
+
+// JSON.stringify = function(data, censor = myCensor) {
+//   return oJSONStringify(data, censor);
+// };
+
 let mainWindow;
 
 const createWindow = () => {

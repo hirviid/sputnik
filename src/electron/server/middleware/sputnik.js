@@ -1,5 +1,6 @@
 import * as actionTypes from '../../../shared/actionTypes';
 import * as actions from '../../../shared/actions';
+import * as selectors from '../../../shared/selectors';
 import CIFactory from '../services/CIFactory';
 
 const sputnik = store => next => action => {
@@ -8,6 +9,16 @@ const sputnik = store => next => action => {
 
     ciMonitor.getInfo(data => {
       next(actions.fulfilInfo('jenkins', data));
+    });
+
+    return;
+  }
+  if (action.type === actionTypes.JOB_REQUESTED) {
+    const configuration = selectors.getConfiguration(store.getState(), action.payload.id);
+    const ciMonitor = CIFactory.getMonitor('jenkins', configuration.configuration);
+
+    ciMonitor.getJob(action.payload.name, data => {
+      next(actions.fulfilJob(action.payload.id, action.payload.name, data));
     });
 
     return;

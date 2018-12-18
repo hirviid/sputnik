@@ -16,10 +16,10 @@ class Galaxy extends React.Component {
     var stars = [];
     // var tweens = [];
 
-    window.onresize = function() {
-      galaxy = document.getElementById('galaxy').getBoundingClientRect();
-      center = { x: galaxy.width / 2, y: galaxy.height / 2 };
-    };
+    // window.onresize = function() {
+    //   galaxy = document.getElementById('galaxy').getBoundingClientRect();
+    //   center = { x: galaxy.width / 2, y: galaxy.height / 2 };
+    // };
 
     // STAR OPTIONS //////////////////////////////////////////////////////////////
     // var maxRad = Math.sqrt(Math.pow(center.x, 2) + Math.pow(center.y, 2));
@@ -54,7 +54,6 @@ class Galaxy extends React.Component {
       tranOrigin = '' + (center.x - startPos.x) + 'px ' + (center.y - startPos.y) + 'px';
 
       time = Math.pow(speed * 0.01, -1) * Math.pow(star.getAttribute('r'), -1);
-      console.log(time);
 
       // tweens.push(TweenMax.to(star, time, {
       //   transformOrigin: tranOrigin,

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import map from 'lodash/map';
+import * as selectors from '../../../../shared/selectors';
 import Flex from '../../../components/Flex';
 import Layout from '../components/Layout';
 import AppTitle from '../components/AppTitle';
@@ -22,7 +23,7 @@ const Configurations = ({ configurations }) => (
 );
 
 const mapStateToProps = state => ({
-  configurations: state.ci.configurations,
+  configurations: selectors.getConfigurations(state),
 });
 
 export default connect(mapStateToProps)(Configurations);

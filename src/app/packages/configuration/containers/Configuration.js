@@ -27,8 +27,8 @@ class Configuration extends React.Component {
           </Logo>
         </Flex>
         <Flex flex={2}>
-          {configuration.configuration.username}
-          &nbsp;@&nbsp;
+          {/* {configuration.configuration.username} */}
+          {/* &nbsp;@&nbsp; */}
           <a href="{configuration.configuration.url}" target="_blank">
             {configuration.configuration.url}
           </a>

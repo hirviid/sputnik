@@ -12,12 +12,35 @@ class CIJenkins extends CIInterface {
   }
 
   getInfo(cb) {
-    this.ci.job.get('ZinderLabs/ZAP - Staging - Build + Deploy', function(err, data) {
-      // this.ci.info(function(err, data) {
+    this.ci.info(function(err, data) {
       if (err) throw err;
 
       console.log('info', data);
       cb(data);
+    });
+  }
+
+  getJob(name, cb) {
+    this.ci.job.get(name, (err, data) => {
+      if (err) throw err;
+
+      const numberOfBuilds = Math.min(5, data.builds.length);
+      let builds = [];
+
+      for (let i = 0; i < numberOfBuilds; i++) {
+        const build = data.builds[i];
+
+        this.ci.build.get(name, build.number, (err, data) => {
+          if (err) throw err;
+
+          builds.push(data);
+
+          if (builds.length === numberOfBuilds) {
+            data.builds = builds;
+            cb(data);
+          }
+        });
+      }
     });
   }
 }
